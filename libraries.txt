@@ -1,0 +1,11 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+Keypad
+RTClib
+
+TM1637
+TM1637 Driver
+SevenSegmentTM1637
+GyverTM1637

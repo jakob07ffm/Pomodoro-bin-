@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "The Bin - Hack Club",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 0, "left": 118, "attrs": {} },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "wokwi-tm1637-7segment-0",
+      "top": 230.36,
+      "left": -12.17,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "wokwi-membrane-keypad-0",
+      "top": 382,
+      "left": 120.8,
+      "attrs": {}
+    },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 340.2, "left": -76.7, "attrs": {} },
+    { "type": "wokwi-led", "id": "wokwi-led-0", "top": 73.2, "left": -63.4, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "wokwi-pushbutton-0",
+      "top": 217.4,
+      "left": -38.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "wokwi-tm1637-7segment-0:CLK", "pico:GP2", "green", [ "h28.8", "v-192", "h-28.8" ] ],
+    [ "wokwi-tm1637-7segment-0:DIO", "pico:GP3", "green", [ "h-19.2", "v-172.8" ] ],
+    [ "wokwi-tm1637-7segment-0:VCC", "pico:3V3", "red", [ "h0", "v-172.8" ] ],
+    [ "wokwi-tm1637-7segment-0:GND", "pico:GND.6", "black", [ "h19.2", "v-134.4" ] ],
+    [ "wokwi-pushbutton-0:1.r", "pico:GP4", "green", [ "v0" ] ],
+    [ "wokwi-pushbutton-0:2.r", "pico:GND.3", "green", [ "h0" ] ],
+    [ "wokwi-led-0:A", "pico:GP5", "green", [ "v0" ] ],
+    [ "wokwi-led-0:C", "pico:GND.3", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R1", "pico:GP6", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R2", "pico:GP7", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R3", "pico:GP8", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R4", "pico:GP9", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C1", "pico:GP10", "green", [ "v-585.6", "h-259.3" ] ],
+    [ "wokwi-membrane-keypad-0:C2", "pico:GP11", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C3", "pico:GP12", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C4", "pico:GP13", "green", [ "v0" ] ],
+    [ "wokwi-ds1307-0:GND", "pico:GND.3", "black", [ "h-28.8", "v-182.4" ] ],
+    [ "wokwi-ds1307-0:5V", "pico:3V3", "red", [ "h-28.8", "v-288.4" ] ],
+    [ "wokwi-ds1307-0:SDA", "pico:GP14", "green", [ "h-48", "v-201.9" ] ],
+    [ "wokwi-ds1307-0:SCL", "pico:GP15", "green", [ "h-57.6", "v-240.2" ] ],
+    [ "wokwi-buzzer-0:2", "pico:GP16", "green", [ "v0" ] ],
+    [ "wokwi-buzzer-0:1", "pico:GND.6", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
